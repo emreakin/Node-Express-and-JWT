@@ -52,7 +52,6 @@ app.get('/requestParamExample/:parameterName', async (req, res) => {
     if(authorizeRequest(req)) {
         const parameter = req.params.parameterName;
         console.log("This is request parameter value -->", parameter);
-        res.send(parameter);
         return res.status(200).send(parameter);
     } else {
         return res.status(401).send({
